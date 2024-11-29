@@ -43,56 +43,58 @@ function App() {
   }, [length, numberAllowed, charAllowed, passwordGenerator])
   return (
     <>
-      <div className=' w-full max-w-lg mx-auto shadow-md rounded-lg px-8 py-6 my-10 text-orange-500 bg-gray-700'>
-        <h1 className='text-white text-center my-3 text-2xl'>Password Generator</h1>
-        <div className='flex shadow rounded-lg overflow-hidden mb-4'>
-          <input
-            type="text"
-            value={password}
-            className='outline-none w-full py-1 px-3'
-            placeholder='Password'
-            readOnly
-            ref={passwordRef}
-          />
-
-          <button
-            onClick={copyPasswordToClipboard}
-            className="outline-none bg-blue-600 py-1.5 px-3 text-center text-white shrink-0 hover:bg-blue-700 cursor-pointer"
-          >Copy</button>
-
-        </div>
-        <div className='flex text-sm gap-x-2'>
-          <div className='flex items-center gap-x-1'>
+      <div className='bg-black w-full h-screen flex justify-center items-center'>
+        <div className=' w-full max-w-lg mx-auto shadow-md rounded-lg px-8 py-6 my-10 text-orange-500 bg-gray-700'>
+          <h1 className='text-white text-center my-3 text-2xl'>Password Generator</h1>
+          <div className='flex shadow rounded-lg overflow-hidden mb-4'>
             <input
-              type='range'
-              min={6}
-              max={100}
-              value={length}
-              className='cursor-pointer'
-              onChange={(e) => setLength(e.target.value)}  // updating length
+              type="text"
+              value={password}
+              className='outline-none w-full py-1 px-3'
+              placeholder='Password'
+              readOnly
+              ref={passwordRef}
             />
-            <label>Length: {length}</label>
-          </div>
-          <div className='flex items-center gap-x-1'>
-            <input
-              type='checkbox'
-              checked={numberAllowed}      // checkbox for character
-              id='numberInput'
-              onChange={() => setNumberAllowed((prev) => !prev)}
-            />
-            <label htmlFor='numberInput'>Numbers</label>
-          </div>
 
-          <div className='flex items-center gap-x-1'>
-            <input
-              type='checkbox'
-              defaultchecked={charAllowed}      // checkbox for character
-              id='numberInput'
-              onChange={() => setCharAllowed((prev) => !prev)}
-            />
-            <label htmlFor='characterInput'>Character</label>
-          </div>
+            <button
+              onClick={copyPasswordToClipboard}
+              className="outline-none bg-blue-600 py-1.5 px-3 text-center text-white shrink-0 hover:bg-blue-700 cursor-pointer"
+            >Copy</button>
 
+          </div>
+          <div className='flex text-sm gap-x-2'>
+            <div className='flex items-center gap-x-1'>
+              <input
+                type='range'
+                min={6}
+                max={100}
+                value={length}
+                className='cursor-pointer'
+                onChange={(e) => setLength(e.target.value)}  // updating length
+              />
+              <label>Length: {length}</label>
+            </div>
+            <div className='flex items-center gap-x-1'>
+              <input
+                type='checkbox'
+                checked={numberAllowed}      // checkbox for character
+                id='numberInput'
+                onChange={() => setNumberAllowed((prev) => !prev)}
+              />
+              <label htmlFor='numberInput'>Numbers</label>
+            </div>
+
+            <div className='flex items-center gap-x-1'>
+              <input
+                type='checkbox'
+                defaultchecked={charAllowed}      // checkbox for character
+                id='numberInput'
+                onChange={() => setCharAllowed((prev) => !prev)}
+              />
+              <label htmlFor='characterInput'>Character</label>
+            </div>
+
+          </div>
         </div>
       </div>
     </>
