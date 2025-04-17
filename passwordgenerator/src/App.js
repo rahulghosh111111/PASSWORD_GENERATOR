@@ -18,6 +18,7 @@ function App() {
     if (numberAllowed) {
       str += "0123456789"
     }
+    
     if (charAllowed) {
       str += "!@#$%^&*"
     }
